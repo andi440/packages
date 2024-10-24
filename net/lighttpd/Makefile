@@ -189,8 +189,6 @@ define Package/lighttpd/install
 	$(INSTALL_DATA) ./files/lighttpd.conf $(1)/etc/lighttpd/
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/doc/config/conf.d/mime.conf $(1)/etc/lighttpd/
 	$(INSTALL_DIR) $(1)/etc/lighttpd/conf.d
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/lighttpd.init $(1)/etc/init.d/lighttpd
 	$(INSTALL_DIR) $(1)/usr/lib/lighttpd
 	for m in $(BASE_MODULES); do \
 		$(CP) $(PKG_INSTALL_DIR)/usr/lib/lighttpd/mod_$$$${m}.so $(1)/usr/lib/lighttpd/ ; \
